@@ -1,0 +1,19 @@
+---
+  apiVersion: "extensions/v1beta1"
+  kind: "Ingress"
+  metadata: 
+    name: "iro-upload-req-microservice-pre-prod-ingress"
+    namespace: "iro-cicd-pre-prod"
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+  spec: 
+    rules: 
+      - 
+        host: "ms.iauro.works"
+        http: 
+          paths: 
+            - 
+              backend: 
+                serviceName: "iro-upload-req-microservice-pre-prod"
+                servicePort: 48622
+              path: "/iro-upload-req-microservice-pre-prod"

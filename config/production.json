@@ -1,0 +1,109 @@
+{
+  "env" : "production",
+  "server" : {
+    "host": "0.0.0.0",
+    "port" : 43766
+  },
+  "database": {
+    "mongo": {
+      "name": "CICD_EMAIL_MS_PROD",
+      "host": "mongo.default.svc.cluster.local",
+      "port": 27017,
+      "username" : "",
+      "password" : ""
+    }
+  },
+  "user_mgmnt_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "ms-prod-du.sterlitetech-software.com",
+    "directory" : "stl-user-mgmnt-microservice-production",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "upload_req_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "ms-prod-du.sterlitetech-software.com",
+    "directory" : "stl-upload-req-microservice-production",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "jira_env": {
+    "protocol" : "http",
+    "host" : "ms-prod-du.sterlitetech-software.com",
+    "directory" : "stl-jira-microservice-production",
+    "app_directory" : "",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "context_2" : "",
+    "version_2" : "",
+    "version" : "",
+    "session_api_version" : "1",
+    "session_api_type" : "auth",
+    "max_jira_key_size" : 10,
+    "dns_protocol" : "https",
+    "dns_host" : "jira-prod-du.sterlitetech-software.com",
+    "dns_directory" : "",
+    "dns_port" : "8080"
+  },
+  "excel_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "ms-prod-du.sterlitetech-software.com",
+    "directory" : "stl-excel-microservice-production",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "logging": {
+    "name": "CICD_EMAIL_MS_PROD",
+    "level": "debug",
+    "path": "/tmp/node_debug.log"
+  },
+  "swagger_base_path" : "/stl-email-microservice-production",
+  "temporary_actor" : "admin",
+  "redis_env" : {
+    "connection" : {
+      "host": "redis.default.svc.cluster.local",
+      "port" : 6379,
+      "opts": {
+        "parser": "javascript"
+      },
+      "password": ""
+    }
+  },
+  "session_time" : 15,
+  "rabbitmq": {
+    "host": "amqp://admin:stl12345@10.151.33.208",
+    "test": "54.88.201.180:5672",
+    "port": "5672"
+  },
+  "ldap_env": {
+    "bindDn": "cn=ldapadmin,cn=Users,dc=elitecore,dc=co,dc=in",
+    "password": "root10"
+  },
+  "email":{
+    "username": "sterlitemail@gmail.com",
+    "password": "iauro100"
+  },
+  "frontend_service":  {
+    "baseURL": "https://ms-prod-du.sterlitetech-software.com",
+    "directory": "stl-devops-frontend-microservice-production"
+  }
+}

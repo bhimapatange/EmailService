@@ -1,0 +1,15 @@
+---
+apiVersion: "v1"
+kind: "Service"
+metadata:
+  name: "iro-email-microservice-staging"
+  namespace: "iro-cicd-staging"
+  labels:
+    app: "iro-email-microservice-staging"
+spec:
+  ports:
+    -
+      port: 43767
+      targetPort: 43767
+  selector:
+    app: "iro-email-microservice-staging"

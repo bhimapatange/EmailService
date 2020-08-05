@@ -1,0 +1,61 @@
+{
+  "env" : "preprod",
+  "server" : {
+    "host": "0.0.0.0",
+    "port" : 45612
+  },
+  "database": {
+    "mongo": {
+      "name": "CICD_UPLOAD_REQ_MS_PREPROD",
+      "host": "100.69.68.83",
+      "port": 27017,
+      "username" : "",
+      "password" : ""
+    }
+  },
+  "upload_req_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "iro-upload-req-microservice-development",
+    "directory" : "",
+    "port" : "45612",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "excel_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "iro-excel-microservice-development",
+    "directory" : "",
+    "port" : "55128",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "logging": {
+    "name": "CICD_UPLOAD_REQ_MS_PREPROD",
+    "level": "debug",
+    "path": "/tmp/node_debug.log"
+  },
+  "swagger_base_path" : "/iro-upload-req-microservice-pre-prod",
+  "temporary_actor" : "admin",
+  "redis_env" : {
+    "connection" : {
+      "host": "100.64.218.183",
+      "port" : 6379,
+      "opts": {
+        "parser": "javascript"
+      },
+      "password": ""
+    }
+  },
+  "shared_project_id": "10014",
+  "session_time" : 15
+}

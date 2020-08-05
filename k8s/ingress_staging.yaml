@@ -1,0 +1,19 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Ingress"
+metadata:
+  name: "iro-email-microservice-staging-ingress"
+  namespace: "iro-cicd-staging"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    -
+      host: "ms-du.sterlitetech-software.com"
+      http:
+        paths:
+          -
+            backend:
+              serviceName: "iro-email-microservice-staging"
+              servicePort: 43767
+            path: "/iro-email-microservice-staging"

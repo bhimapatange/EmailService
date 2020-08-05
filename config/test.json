@@ -1,0 +1,59 @@
+{
+  "env" : "test",
+  "server" : {
+    "host": "0.0.0.0",
+    "port" : 55756
+  },
+  "database": {
+    "mongo": {
+      "name": "CICD_UPLOAD_REQ_MS_TEST",
+      "host": "0.0.0.0",
+      "port": 27017,
+      "username" : "",
+      "password" : ""
+    }
+  },
+  "upload_req_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "iro-upload-req-microservice-development",
+    "directory" : "",
+    "port" : "55766",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "excel_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "iro-excel-microservice-development",
+    "directory" : "",
+    "port" : "46201",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "logging": {
+    "name": "CICD_UPLOAD_REQ_MS_TEST",
+    "level": "debug",
+    "path": "/tmp/node_debug.log"
+  },
+  "swagger_base_path" : "/iro-upload-req-microservice-development",
+  "redis_env" : {
+    "connection" : {
+      "host": "redis",
+      "port" : 6379,
+      "opts": {
+        "parser": "javascript"
+      },
+      "password": ""
+    }
+  },
+  "session_time" : 15
+}

@@ -1,0 +1,109 @@
+{
+  "env" : "env-local",
+  "server" : {
+    "host": "0.0.0.0",
+    "port" : 43766
+  },
+  "database": {
+    "mongo": {
+      "name": "CICD_EMAIL_MS_DEV",
+      "host": "0.0.0.0",
+      "port": 27017,
+      "username" : "",
+      "password" : ""
+    }
+  },
+  "user_mgmnt_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "ms-du.sterlitetech-software.com",
+    "directory" : "iro-user-mgmnt-microservice-development",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "upload_req_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "ms-du.sterlitetech-software.com",
+    "directory" : "iro-upload-req-microservice-development",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "jira_env": {
+    "protocol" : "http",
+    "host" : "ms-du.sterlitetech-software.com",
+    "directory" : "iro-jira-microservice-development",
+    "app_directory" : "",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "context_2" : "",
+    "version_2" : "",
+    "version" : "",
+    "session_api_version" : "1",
+    "session_api_type" : "auth",
+    "max_jira_key_size" : 10,
+    "dns_protocol" : "https",
+    "dns_host" : "jira-du.sterlitetech-software.com",
+    "dns_directory" : "",
+    "dns_port" : "8080"
+  },
+  "excel_env": {
+    "svc_protocol" : "http",
+    "protocol" : "http",
+    "app_host": "",
+    "host" : "ms-du.sterlitetech-software.com",
+    "directory" : "iro-excel-microservice-development",
+    "port" : "",
+    "context" : "",
+    "type" : "",
+    "version" : "",
+    "session_api_version" : "",
+    "session_api_type" : ""
+  },
+  "logging": {
+    "name": "CICD_EMAIL_MS_DEV",
+    "level": "debug",
+    "path": "/tmp/node_debug.log"
+  },
+  "swagger_base_path" : "/iro-email-microservice-development",
+  "temporary_actor" : "admin",
+  "redis_env" : {
+    "connection" : {
+      "host": "0.0.0.0",
+      "port" : 6379,
+      "opts": {
+        "parser": "javascript"
+      },
+      "password": ""
+    }
+  },
+  "session_time" : 15,
+  "rabbitmq": {
+    "host": "amqp://sterlite:stl12345@10.151.33.2",
+    "test": "54.88.201.180:5672",
+    "port": "5672"
+  },
+  "ldap_env": {
+    "bindDn": "cn=ldapadmin,cn=Users,dc=elitecore,dc=co,dc=in",
+    "password": "root10"
+  },
+  "email":{
+    "username": "sterlitemail@gmail.com",
+    "password": "iauro100"
+  },
+  "frontend_service":  {
+    "baseURL": "http://ms-du.sterlitetech-software.com",
+    "directory": "iro-devops-frontend-microservice-development"
+  }
+}

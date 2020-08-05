@@ -1,0 +1,19 @@
+---
+  apiVersion: "extensions/v1beta1"
+  kind: "Ingress"
+  metadata:
+    name: "iro-email-microservice-production-ingress"
+    namespace: "iro-cicd-production"
+    annotations:
+      nginx.ingress.kubernetes.io/rewrite-target: /
+  spec:
+    rules:
+      -
+        host: "ms-prod-du.sterlitetech-software.com"
+        http:
+          paths:
+            -
+              backend:
+                serviceName: "stl-email-microservice-production"
+                servicePort: 43766
+              path: "/stl-email-microservice-production"

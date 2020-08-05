@@ -1,0 +1,37 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: "iro-email-microservice-staging"
+  namespace: "iro-cicd-staging"
+spec:
+  selector:
+    matchLabels:
+      app: "iro-email-microservice-staging"
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  minReadySeconds: 5
+  template:
+    metadata:
+      labels:
+        app: "iro-email-microservice-staging"
+    spec:
+      containers:
+        -
+          name: "iro-email-microservice-development"
+          image: "gitlab-du.sterlitetech-software.com:5005/root/email-service:sterlite-staging-latest"
+          imagePullPolicy: "Always"
+          env:
+            -
+              name: "NODE_ENV"
+              value: "staging"
+          ports:
+            -
+              containerPort: 43767
+      imagePullSecrets:
+        -
+          name: "iro-email"

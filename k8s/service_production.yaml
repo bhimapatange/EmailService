@@ -1,0 +1,15 @@
+---
+  apiVersion: "v1"
+  kind: "Service"
+  metadata:
+    name: "stl-email-microservice-production"
+    namespace: "iro-cicd-production"
+    labels:
+      app: "iro-email-microservice-production"
+  spec:
+    ports:
+      -
+        port: 43766
+        targetPort: 43766
+    selector:
+      app: "iro-email-microservice-production"

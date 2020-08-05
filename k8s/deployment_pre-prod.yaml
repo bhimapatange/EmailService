@@ -1,0 +1,37 @@
+---
+  apiVersion: "extensions/v1beta1"
+  kind: "Deployment"
+  metadata: 
+    name: "iro-upload-req-microservice-pre-prod"
+    namespace: "iro-cicd-pre-prod"
+  spec: 
+    selector: 
+      matchLabels: 
+        app: "iro-upload-req-microservice-pre-prod"
+    replicas: 1
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+    minReadySeconds: 5
+    template: 
+      metadata: 
+        labels: 
+          app: "iro-upload-req-microservice-pre-prod"
+      spec: 
+        containers: 
+          - 
+            name: "iro-upload-req-microservice-pre-prod"
+            image: "gitlab.iauro.works:4567/root/project-management-service/development:latest"
+            imagePullPolicy: "Always"
+            env:
+              -
+                name: "NODE_ENV"
+                value: "preprod"
+            ports: 
+              - 
+                containerPort: 48622
+        imagePullSecrets: 
+          - 
+            name: "iro-upload-req"
