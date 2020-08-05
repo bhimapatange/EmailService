@@ -15,7 +15,8 @@ const log = require('logger/logger'),
     const nodeMailer = require('nodemailer');
     const cron = require('node-cron');
     const MailLog = require('src/models/mail_logs');
-
+    const mailjet = require ('node-mailjet')
+    .connect('58ddc36663f304c969157c0715ded361', '96bce4c370ba911438ca40e62ee25a18');
     const transporter = nodeMailer.createTransport({
         service: 'Gmail',
         auth: {
@@ -229,6 +230,36 @@ exports.sendMailToUser = (request, reply) => {
             parameters = {
               };
             mailTitle = `Team created`;
+            const request = mailjet.post("send", {'version': 'v3.1'})
+.request({
+  "Messages":[
+    {
+      "From": {
+        "Email": "bhimrao.patange@iauro.com",
+        "Name": "Bhima"
+      },
+      "To": [
+        {
+          "Email": "bhimrao.patange@iauro.com",
+          "Name": "Bhima"
+        }
+      ],
+      "Subject": "Greetings from Mailjet.",
+      "TextPart": "My first Mailjet email",
+      "HTMLPart": "<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+      "CustomID": "AppGettingStartedTest"
+    }
+  ]
+})
+request
+  .then((result) => {
+    console.log(result.body)
+  })
+  .catch((err) => {
+    console.log(err.statusCode)
+  })
+
+return;
             break;
         default:
             reply(Response.sendResponse(false, `Mail type is not defined, mail types are ${allMailTypes}`, ResponseMessages.EMAIL_SENT_FAILED, StatusCodes.BAD_REQUEST)).code(StatusCodes.BAD_REQUEST);
